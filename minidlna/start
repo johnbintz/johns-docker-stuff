@@ -1,0 +1,5 @@
+#!/bin/sh
+
+ruby -rerb -e 'ERB.new($stdin.read).run(binding)' < /etc/minidlna.conf.erb > /etc/minidlna.conf
+/usr/local/sbin/minidlnad -d -f /etc/minidlna.conf
+
